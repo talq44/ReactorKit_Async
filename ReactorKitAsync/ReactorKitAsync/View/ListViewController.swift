@@ -112,5 +112,25 @@ extension ListViewController: ReactorKit.View {
             .map { !$0 }
             .bind(to: emptyImage.rx.isHidden)
             .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.errorMessage }
+            .distinctUntilChanged()
+            .compactMap { $0 }
+            .subscribe(onNext: { [weak self] message in
+                self?.showAlert(message: message)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(
+            title: "확인",
+            style: .default,
+            handler: { _ in
+                
+            }
+        ))
+        present(alert, animated: true)
     }
 }
