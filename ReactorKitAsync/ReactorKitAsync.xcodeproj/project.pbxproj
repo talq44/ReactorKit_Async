@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B636BDEF2EA7C735004BDFA3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B636BDEE2EA7C735004BDFA3 /* Alamofire */; };
+		B636BDF22EA7C73E004BDFA3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B636BDF12EA7C73E004BDFA3 /* Kingfisher */; };
+		B636BDF52EA7C74F004BDFA3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B636BDF42EA7C74F004BDFA3 /* RxCocoa */; };
+		B636BDF72EA7C74F004BDFA3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B636BDF62EA7C74F004BDFA3 /* RxSwift */; };
+		B636BDFA2EA7C759004BDFA3 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = B636BDF92EA7C759004BDFA3 /* ReactorKit */; };
+		B636BDFD2EA7C772004BDFA3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B636BDFC2EA7C772004BDFA3 /* SnapKit */; };
+		B636BE002EA7C785004BDFA3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B636BDFF2EA7C785004BDFA3 /* Moya */; };
+		B636BE022EA7C785004BDFA3 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B636BE012EA7C785004BDFA3 /* RxMoya */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B636BDCA2EA7C710004BDFA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B636BDAB2EA7C70E004BDFA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B636BDB22EA7C70E004BDFA3;
+			remoteInfo = ReactorKitAsync;
+		};
+		B636BDD42EA7C710004BDFA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B636BDAB2EA7C70E004BDFA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B636BDB22EA7C70E004BDFA3;
+			remoteInfo = ReactorKitAsync;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B636BDB32EA7C70E004BDFA3 /* ReactorKitAsync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactorKitAsync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B636BDC92EA7C710004BDFA3 /* ReactorKitAsyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactorKitAsyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B636BDD32EA7C710004BDFA3 /* ReactorKitAsyncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactorKitAsyncUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B636BDDB2EA7C710004BDFA3 /* Exceptions for "ReactorKitAsync" folder in "ReactorKitAsync" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B636BDB22EA7C70E004BDFA3 /* ReactorKitAsync */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B636BDB52EA7C70E004BDFA3 /* ReactorKitAsync */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B636BDDB2EA7C710004BDFA3 /* Exceptions for "ReactorKitAsync" folder in "ReactorKitAsync" target */,
+			);
+			path = ReactorKitAsync;
+			sourceTree = "<group>";
+		};
+		B636BDCC2EA7C710004BDFA3 /* ReactorKitAsyncTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ReactorKitAsyncTests;
+			sourceTree = "<group>";
+		};
+		B636BDD62EA7C710004BDFA3 /* ReactorKitAsyncUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ReactorKitAsyncUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B636BDB02EA7C70E004BDFA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B636BDF52EA7C74F004BDFA3 /* RxCocoa in Frameworks */,
+				B636BDF22EA7C73E004BDFA3 /* Kingfisher in Frameworks */,
+				B636BDF72EA7C74F004BDFA3 /* RxSwift in Frameworks */,
+				B636BDFD2EA7C772004BDFA3 /* SnapKit in Frameworks */,
+				B636BDFA2EA7C759004BDFA3 /* ReactorKit in Frameworks */,
+				B636BE002EA7C785004BDFA3 /* Moya in Frameworks */,
+				B636BE022EA7C785004BDFA3 /* RxMoya in Frameworks */,
+				B636BDEF2EA7C735004BDFA3 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B636BDC62EA7C710004BDFA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B636BDD02EA7C710004BDFA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B636BDAA2EA7C70E004BDFA3 = {
+			isa = PBXGroup;
+			children = (
+				B636BDB52EA7C70E004BDFA3 /* ReactorKitAsync */,
+				B636BDCC2EA7C710004BDFA3 /* ReactorKitAsyncTests */,
+				B636BDD62EA7C710004BDFA3 /* ReactorKitAsyncUITests */,
+				B636BDB42EA7C70E004BDFA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B636BDB42EA7C70E004BDFA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B636BDB32EA7C70E004BDFA3 /* ReactorKitAsync.app */,
+				B636BDC92EA7C710004BDFA3 /* ReactorKitAsyncTests.xctest */,
+				B636BDD32EA7C710004BDFA3 /* ReactorKitAsyncUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B636BDB22EA7C70E004BDFA3 /* ReactorKitAsync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B636BDDC2EA7C710004BDFA3 /* Build configuration list for PBXNativeTarget "ReactorKitAsync" */;
+			buildPhases = (
+				B636BDAF2EA7C70E004BDFA3 /* Sources */,
+				B636BDB02EA7C70E004BDFA3 /* Frameworks */,
+				B636BDB12EA7C70E004BDFA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B636BDB52EA7C70E004BDFA3 /* ReactorKitAsync */,
+			);
+			name = ReactorKitAsync;
+			packageProductDependencies = (
+				B636BDEE2EA7C735004BDFA3 /* Alamofire */,
+				B636BDF12EA7C73E004BDFA3 /* Kingfisher */,
+				B636BDF42EA7C74F004BDFA3 /* RxCocoa */,
+				B636BDF62EA7C74F004BDFA3 /* RxSwift */,
+				B636BDF92EA7C759004BDFA3 /* ReactorKit */,
+				B636BDFC2EA7C772004BDFA3 /* SnapKit */,
+				B636BDFF2EA7C785004BDFA3 /* Moya */,
+				B636BE012EA7C785004BDFA3 /* RxMoya */,
+			);
+			productName = ReactorKitAsync;
+			productReference = B636BDB32EA7C70E004BDFA3 /* ReactorKitAsync.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B636BDC82EA7C710004BDFA3 /* ReactorKitAsyncTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B636BDE12EA7C710004BDFA3 /* Build configuration list for PBXNativeTarget "ReactorKitAsyncTests" */;
+			buildPhases = (
+				B636BDC52EA7C710004BDFA3 /* Sources */,
+				B636BDC62EA7C710004BDFA3 /* Frameworks */,
+				B636BDC72EA7C710004BDFA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B636BDCB2EA7C710004BDFA3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B636BDCC2EA7C710004BDFA3 /* ReactorKitAsyncTests */,
+			);
+			name = ReactorKitAsyncTests;
+			packageProductDependencies = (
+			);
+			productName = ReactorKitAsyncTests;
+			productReference = B636BDC92EA7C710004BDFA3 /* ReactorKitAsyncTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B636BDD22EA7C710004BDFA3 /* ReactorKitAsyncUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B636BDE42EA7C710004BDFA3 /* Build configuration list for PBXNativeTarget "ReactorKitAsyncUITests" */;
+			buildPhases = (
+				B636BDCF2EA7C710004BDFA3 /* Sources */,
+				B636BDD02EA7C710004BDFA3 /* Frameworks */,
+				B636BDD12EA7C710004BDFA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B636BDD52EA7C710004BDFA3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B636BDD62EA7C710004BDFA3 /* ReactorKitAsyncUITests */,
+			);
+			name = ReactorKitAsyncUITests;
+			packageProductDependencies = (
+			);
+			productName = ReactorKitAsyncUITests;
+			productReference = B636BDD32EA7C710004BDFA3 /* ReactorKitAsyncUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B636BDAB2EA7C70E004BDFA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					B636BDB22EA7C70E004BDFA3 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					B636BDC82EA7C710004BDFA3 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = B636BDB22EA7C70E004BDFA3;
+					};
+					B636BDD22EA7C710004BDFA3 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = B636BDB22EA7C70E004BDFA3;
+					};
+				};
+			};
+			buildConfigurationList = B636BDAE2EA7C70E004BDFA3 /* Build configuration list for PBXProject "ReactorKitAsync" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B636BDAA2EA7C70E004BDFA3;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B636BDED2EA7C735004BDFA3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B636BDF02EA7C73E004BDFA3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B636BDF32EA7C74F004BDFA3 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B636BDF82EA7C759004BDFA3 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				B636BDFB2EA7C772004BDFA3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B636BDFE2EA7C785004BDFA3 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B636BDB42EA7C70E004BDFA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B636BDB22EA7C70E004BDFA3 /* ReactorKitAsync */,
+				B636BDC82EA7C710004BDFA3 /* ReactorKitAsyncTests */,
+				B636BDD22EA7C710004BDFA3 /* ReactorKitAsyncUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B636BDB12EA7C70E004BDFA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B636BDC72EA7C710004BDFA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B636BDD12EA7C710004BDFA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B636BDAF2EA7C70E004BDFA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B636BDC52EA7C710004BDFA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B636BDCF2EA7C710004BDFA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B636BDCB2EA7C710004BDFA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B636BDB22EA7C70E004BDFA3 /* ReactorKitAsync */;
+			targetProxy = B636BDCA2EA7C710004BDFA3 /* PBXContainerItemProxy */;
+		};
+		B636BDD52EA7C710004BDFA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B636BDB22EA7C70E004BDFA3 /* ReactorKitAsync */;
+			targetProxy = B636BDD42EA7C710004BDFA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B636BDDD2EA7C710004BDFA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ER3SS2UJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReactorKitAsync/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talq.ReactorKitAsync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B636BDDE2EA7C710004BDFA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ER3SS2UJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReactorKitAsync/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talq.ReactorKitAsync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B636BDDF2EA7C710004BDFA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ER3SS2UJ44;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B636BDE02EA7C710004BDFA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ER3SS2UJ44;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B636BDE22EA7C710004BDFA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ER3SS2UJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talq.ReactorKitAsyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactorKitAsync.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReactorKitAsync";
+			};
+			name = Debug;
+		};
+		B636BDE32EA7C710004BDFA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ER3SS2UJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talq.ReactorKitAsyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactorKitAsync.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReactorKitAsync";
+			};
+			name = Release;
+		};
+		B636BDE52EA7C710004BDFA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ER3SS2UJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talq.ReactorKitAsyncUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ReactorKitAsync;
+			};
+			name = Debug;
+		};
+		B636BDE62EA7C710004BDFA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ER3SS2UJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talq.ReactorKitAsyncUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ReactorKitAsync;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B636BDAE2EA7C70E004BDFA3 /* Build configuration list for PBXProject "ReactorKitAsync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B636BDDF2EA7C710004BDFA3 /* Debug */,
+				B636BDE02EA7C710004BDFA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B636BDDC2EA7C710004BDFA3 /* Build configuration list for PBXNativeTarget "ReactorKitAsync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B636BDDD2EA7C710004BDFA3 /* Debug */,
+				B636BDDE2EA7C710004BDFA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B636BDE12EA7C710004BDFA3 /* Build configuration list for PBXNativeTarget "ReactorKitAsyncTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B636BDE22EA7C710004BDFA3 /* Debug */,
+				B636BDE32EA7C710004BDFA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B636BDE42EA7C710004BDFA3 /* Build configuration list for PBXNativeTarget "ReactorKitAsyncUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B636BDE52EA7C710004BDFA3 /* Debug */,
+				B636BDE62EA7C710004BDFA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B636BDED2EA7C735004BDFA3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		B636BDF02EA7C73E004BDFA3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.0;
+			};
+		};
+		B636BDF32EA7C74F004BDFA3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.0;
+			};
+		};
+		B636BDF82EA7C759004BDFA3 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+		B636BDFB2EA7C772004BDFA3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		B636BDFE2EA7C785004BDFA3 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B636BDEE2EA7C735004BDFA3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B636BDED2EA7C735004BDFA3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		B636BDF12EA7C73E004BDFA3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B636BDF02EA7C73E004BDFA3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		B636BDF42EA7C74F004BDFA3 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B636BDF32EA7C74F004BDFA3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B636BDF62EA7C74F004BDFA3 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B636BDF32EA7C74F004BDFA3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B636BDF92EA7C759004BDFA3 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B636BDF82EA7C759004BDFA3 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
+		B636BDFC2EA7C772004BDFA3 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B636BDFB2EA7C772004BDFA3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		B636BDFF2EA7C785004BDFA3 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B636BDFE2EA7C785004BDFA3 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		B636BE012EA7C785004BDFA3 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B636BDFE2EA7C785004BDFA3 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B636BDAB2EA7C70E004BDFA3 /* Project object */;
+}
