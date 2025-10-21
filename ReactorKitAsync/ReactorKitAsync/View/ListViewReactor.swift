@@ -51,7 +51,7 @@ extension ListViewReactor {
         case .refresh:
             return .concat([
                 .just(.startLoading),
-                requestItems(isMore: true, page: currentPage)
+                requestItems(isMore: false, page: currentPage)
             ])
         case .more:
             return .concat([
@@ -94,14 +94,17 @@ extension ListViewReactor {
             state.isShowLoading = true
             state.isShowEmpty = false
         case .setItems(let page, let items):
+            currentPage = page
             state.isShowLoading = false
             state.items = items
             state.isShowEmpty = items.isEmpty
         case .addItems(let page, let items):
+            currentPage = page
             state.isShowLoading = false
             state.items += items
         case .setError(let message):
             state.isShowLoading = false
+            state.errorMessage = message
         }
         
         return state
