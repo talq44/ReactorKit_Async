@@ -80,6 +80,11 @@ extension ListViewController: ReactorKit.View {
             .map { Reactor.Action.selectItem(id: $0.id) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        collectionView.rx.willDisplayLastItem(in: 0)
+            .map { Reactor.Action.more }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
     
     private func bindState(reactor: ListViewReactor) {
