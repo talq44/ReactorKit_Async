@@ -10,15 +10,24 @@ enum ListViewAction {
 
 enum ListViewMutation {
     case startLoading
-    case setItems(page: Int, items: [String])
-    case addItems(page: Int, items: [String])
+    case setItems(page: Int, items: [ListViewState.Item])
+    case addItems(page: Int, items: [ListViewState.Item])
     case setError(message: String)
 }
 
 struct ListViewState {
+    struct Item: Equatable {
+        let id: String
+        let imageUrl: String
+        let title: String
+        let subTitle: String
+        let price: Double
+        let discountPrice: Double?
+    }
+    
     var isShowLoading: Bool = false
     var isShowEmpty: Bool = false
-    var items: [String] = []
+    var items: [ListViewState.Item] = []
     var errorMessage: String?
 }
 
