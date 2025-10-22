@@ -87,7 +87,7 @@ extension ListViewReactor {
         return Observable.create { emitter in
             let requestPage = isMore ? page + 1 : 1
             
-            Task { @MainActor in
+            let tast = Task { @MainActor in
                 do {
                     let result = try await useCase.execute(page: requestPage)
                     
@@ -112,7 +112,7 @@ extension ListViewReactor {
                 emitter.onCompleted()
             }
             
-            return Disposables.create()
+            return Disposables.create { tast.cancel() }
         }
     }
 }
