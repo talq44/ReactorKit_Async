@@ -106,20 +106,24 @@ extension ListViewController: ReactorKit.View {
         
         reactor.state.map { $0.isShowLoading }
             .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] isShowLoading in
-                self?.indicatorView.isHidden = !isShowLoading
-                isShowLoading ? self?.indicatorView.startAnimating() : self?.indicatorView.stopAnimating()
+                guard let self else { return }
+                indicatorView.isHidden = !isShowLoading
+                isShowLoading ? indicatorView.startAnimating() : indicatorView.stopAnimating()
             })
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.isShowEmpty }
             .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
             .map { !$0 }
             .bind(to: emptyImage.rx.isHidden)
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.errorMessage }
             .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
             .compactMap { $0 }
             .subscribe(onNext: { [weak self] message in
                 self?.showAlert(message: message)
