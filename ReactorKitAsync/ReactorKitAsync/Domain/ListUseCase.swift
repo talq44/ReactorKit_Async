@@ -1,5 +1,5 @@
 import Foundation
 
 public protocol ListUseCase {
-    func excute(page: Int) async throws(ListUsecaseError) -> ListEntity
+    func excute(page: Int) async throws(ListError) -> ListEntity
 }

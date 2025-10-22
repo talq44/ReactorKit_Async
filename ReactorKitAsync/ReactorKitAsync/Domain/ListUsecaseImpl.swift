@@ -8,7 +8,7 @@ final actor ListUsecaseImpl: ListUseCase {
         self.repository = repository
     }
     
-    func excute(page: Int) async throws(ListUsecaseError) -> ListEntity {
+    func excute(page: Int) async throws(ListError) -> ListEntity {
         guard page > 1 else {
             return try await repository.fetch()
         }

@@ -1,5 +1,5 @@
 import Foundation
 
-public enum ListUsecaseError: Error {
+public enum ListError: Error {
     case unknown
 }
