@@ -20,7 +20,7 @@ struct ListViewState {
         let id: String
         let imageUrl: String
         let title: String
-        let subTitle: String
+        let subTitle: String?
         let price: Double
         let discountPrice: Double?
     }
@@ -95,13 +95,13 @@ extension ListViewReactor {
                         emitter.onNext(.addItems(
                             page: requestPage,
                             totalPage: result.totalPage,
-                            items: []
+                            items: result.convertItems
                         ))
                     } else {
                         emitter.onNext(.setItems(
                             page: requestPage,
                             totalPage: result.totalPage,
-                            items: []
+                            items: result.convertItems
                         ))
                     }
                 }
@@ -150,5 +150,20 @@ extension ListViewReactor {
         }
         
         return state
+    }
+}
+
+extension ListEntity {
+    fileprivate var convertItems: [ListViewState.Item] {
+        return items.map { item in
+            return ListViewState.Item(
+                id: item.id,
+                imageUrl: item.imageURL,
+                title: item.title,
+                subTitle: item.subTitle,
+                price: item.originPrice,
+                discountPrice: item.discountPrice
+            )
+        }
     }
 }

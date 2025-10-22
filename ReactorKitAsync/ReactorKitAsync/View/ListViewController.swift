@@ -92,11 +92,11 @@ extension ListViewController: ReactorKit.View {
     
     private func bindState(reactor: ListViewReactor) {
         reactor.state.map { $0.items }
-            .distinctUntilChanged()
-            .observe(on: MainScheduler.instance)
             .do(onNext: { [weak self] _ in
                 self?.refreshControl.endRefreshing()
             })
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
             .bind(to: collectionView.rx.items(
                 cellIdentifier: String(describing: Cell.self),
                 cellType: Cell.self
@@ -106,8 +106,10 @@ extension ListViewController: ReactorKit.View {
         
         reactor.state.map { $0.isShowLoading }
             .distinctUntilChanged()
-            .map { !$0 }
-            .bind(to: indicatorView.rx.isHidden)
+            .subscribe(onNext: { [weak self] isShowLoading in
+                self?.indicatorView.isHidden = !isShowLoading
+                isShowLoading ? self?.indicatorView.startAnimating() : self?.indicatorView.stopAnimating()
+            })
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.isShowEmpty }
