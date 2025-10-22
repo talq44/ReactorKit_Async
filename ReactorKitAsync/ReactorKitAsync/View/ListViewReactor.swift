@@ -10,8 +10,8 @@ enum ListViewAction {
 
 enum ListViewMutation {
     case startLoading
-    case setItems(page: Int, items: [ListViewState.Item])
-    case addItems(page: Int, items: [ListViewState.Item])
+    case setItems(page: Int, totalPage: Int?, items: [ListViewState.Item])
+    case addItems(page: Int, totalPage: Int?, items: [ListViewState.Item])
     case setError(message: String)
 }
 
@@ -29,6 +29,9 @@ struct ListViewState {
     var isShowEmpty: Bool = false
     var items: [ListViewState.Item] = []
     var errorMessage: String?
+    
+    var currentPage: Int = 0
+    var totalPage: Int = 1
 }
 
 final class ListViewReactor: Reactor {
@@ -37,10 +40,12 @@ final class ListViewReactor: Reactor {
     typealias State = ListViewState
     
     let initialState: ListViewState
-    private var currentPage: Int = 0
     
-    init() {
+    private let useCase: ListUseCase
+    
+    init(useCase: ListUseCase) {
         initialState = .init()
+        self.useCase = useCase
     }
 }
 
@@ -51,12 +56,16 @@ extension ListViewReactor {
         case .refresh:
             return .concat([
                 .just(.startLoading),
-                requestItems(isMore: false, page: currentPage)
+                requestItems(useCase: useCase, isMore: false, page: currentState.currentPage)
             ])
         case .more:
+            guard currentState.currentPage < currentState.totalPage else {
+                return .empty()
+            }
+            
             return .concat([
                 .just(.startLoading),
-                requestItems(isMore: true, page: currentPage)
+                requestItems(useCase: useCase, isMore: true, page: currentState.currentPage)
             ])
         case .selectItem(let id):
             guard let item = currentState.items.first(where: { $0.id == id }) else {
@@ -70,17 +79,38 @@ extension ListViewReactor {
 
 // MARK: - Side Effect
 extension ListViewReactor {
-    private func requestItems(isMore: Bool, page: Int) -> Observable<ListViewMutation> {
+    private func requestItems(
+        useCase: ListUseCase,
+        isMore: Bool,
+        page: Int
+    ) -> Observable<ListViewMutation> {
         return Observable.create { emitter in
             let requestPage = isMore ? page + 1 : 1
             
-            if isMore {
-                emitter.onNext(.addItems(page: requestPage, items: []))
-            } else {
-                emitter.onNext(.setItems(page: requestPage, items: []))
+            Task { @MainActor in
+                do {
+                    let result = try await useCase.execute(page: requestPage)
+                    
+                    if isMore {
+                        emitter.onNext(.addItems(
+                            page: requestPage,
+                            totalPage: result.totalPage,
+                            items: []
+                        ))
+                    } else {
+                        emitter.onNext(.setItems(
+                            page: requestPage,
+                            totalPage: result.totalPage,
+                            items: []
+                        ))
+                    }
+                }
+                catch {
+                    emitter.onNext(.setError(message: error.localizedDescription))
+                }
+                
+                emitter.onCompleted()
             }
-            
-            emitter.onCompleted()
             
             return Disposables.create()
         }
@@ -97,15 +127,23 @@ extension ListViewReactor {
             state.errorMessage = nil
             state.isShowLoading = true
             state.isShowEmpty = false
-        case .setItems(let page, let items):
-            currentPage = page
+        case .setItems(let page, let totalPage, let items):
+            state.currentPage = page
             state.isShowLoading = false
             state.items = items
             state.isShowEmpty = items.isEmpty
-        case .addItems(let page, let items):
-            currentPage = page
+            
+            if let totalPage {
+                state.totalPage = totalPage
+            }
+        case .addItems(let page, let totalPage, let items):
+            state.currentPage = page
             state.isShowLoading = false
             state.items += items
+            
+            if let totalPage {
+                state.totalPage = totalPage
+            }
         case .setError(let message):
             state.isShowLoading = false
             state.errorMessage = message
