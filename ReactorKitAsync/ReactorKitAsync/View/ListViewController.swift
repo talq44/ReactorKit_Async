@@ -9,7 +9,10 @@ final class ListViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
-    private let collectionView = UICollectionView()
+    private let collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewLayout()
+    )
     private let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         return refreshControl
@@ -89,11 +92,11 @@ extension ListViewController: ReactorKit.View {
     
     private func bindState(reactor: ListViewReactor) {
         reactor.state.map { $0.items }
-            .distinctUntilChanged()
-            .observe(on: MainScheduler.instance)
             .do(onNext: { [weak self] _ in
                 self?.refreshControl.endRefreshing()
             })
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
             .bind(to: collectionView.rx.items(
                 cellIdentifier: String(describing: Cell.self),
                 cellType: Cell.self
@@ -103,18 +106,24 @@ extension ListViewController: ReactorKit.View {
         
         reactor.state.map { $0.isShowLoading }
             .distinctUntilChanged()
-            .map { !$0 }
-            .bind(to: indicatorView.rx.isHidden)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] isShowLoading in
+                guard let self else { return }
+                indicatorView.isHidden = !isShowLoading
+                isShowLoading ? indicatorView.startAnimating() : indicatorView.stopAnimating()
+            })
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.isShowEmpty }
             .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
             .map { !$0 }
             .bind(to: emptyImage.rx.isHidden)
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.errorMessage }
             .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
             .compactMap { $0 }
             .subscribe(onNext: { [weak self] message in
                 self?.showAlert(message: message)
