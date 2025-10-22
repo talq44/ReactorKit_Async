@@ -31,11 +31,11 @@ public struct StubListRepository: ListRepository {
             let uniqueIndex = start + index
             return ListEntity.Item(
                 id: "id_\(uniqueIndex)",
-                title: "https://picsum.photos/id/\(uniqueIndex % 100)/200/200",
-                subTitle: "Title \(uniqueIndex)",
-                imageURL: "Subtitle \(uniqueIndex)",
-                originPrice: Double(1000 + uniqueIndex * 10),
-                discountPrice: (uniqueIndex % 3 == 0) ? Double(900 + uniqueIndex * 8) : nil
+                title: "Title \(uniqueIndex)",
+                subTitle: "Subtitle \(uniqueIndex)",
+                imageURL: "https://picsum.photos/id/\(uniqueIndex % 100)/200/200",
+                originPrice: Double.random(in: 0..<100_000_000),
+                discountPrice: (uniqueIndex % 3 == 0) ? Double.random(in: 0..<100_000_000) : nil
             )
         }
     }
