@@ -9,7 +9,10 @@ final class ListViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
-    private let collectionView = UICollectionView()
+    private let collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewLayout()
+    )
     private let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         return refreshControl
