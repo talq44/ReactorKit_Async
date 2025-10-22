@@ -1,6 +1,6 @@
 import Foundation
 
-final actor ListUsecaseImpl: ListUsecase {
+final actor ListUsecaseImpl: ListUseCase {
     
     private let repository: ListRepository
     
