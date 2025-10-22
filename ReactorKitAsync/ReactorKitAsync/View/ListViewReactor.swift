@@ -68,7 +68,7 @@ extension ListViewReactor {
                 requestItems(useCase: useCase, isMore: true, page: currentState.currentPage)
             ])
         case .selectItem(let id):
-            guard let item = currentState.items.first(where: { $0.id == id }) else {
+            guard let _ = currentState.items.first(where: { $0.id == id }) else {
                 return .empty()
             }
             
