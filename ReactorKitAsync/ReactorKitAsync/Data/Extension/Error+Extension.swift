@@ -1,10 +1,7 @@
 import Foundation
 
 extension Error {
-    internal func apiError(
-        statusCodeType: HTTPStatusCode?,
-        message: String?
-    ) -> APIError {
+    internal func apiError(statusCodeType: HTTPStatusCode?) -> APIError {
         do {
             throw self
         } catch let DecodingError.dataCorrupted(context) {
