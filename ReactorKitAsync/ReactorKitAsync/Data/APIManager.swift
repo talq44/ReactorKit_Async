@@ -38,19 +38,18 @@ class APIManager {
                         
                         continuation.resume(returning: model)
                     } catch {
+                        let convertError = response.convertError(error: error)
                         
-                        let amondzError = response.convertError(error: error)
-                        
-                        continuation.resume(throwing: amondzError)
+                        continuation.resume(throwing: convertError)
                     }
                     
                 case .failure(let error):
-                    if let converted = error.response?.convertError(error: error) {
-                        continuation.resume(throwing: converted)
-                    } else {
-                        // Fallback to a known APIError to satisfy typed throws(APIError)
+                    guard let converted = error.response?.convertError(error: error) else {
                         continuation.resume(throwing: APIError.unknown)
+                        return
                     }
+                    
+                    continuation.resume(throwing: converted)
                 }
             }
         }
