@@ -1,5 +1,5 @@
 //
-//  APIManager+Extension.swift
+//  APIManagerImpl+Extension.swift
 //  ReactorKitAsync
 //
 //  Created by 박창규 on 10/23/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension APIManager {
+extension APIManagerImpl: APIManager {
     func getItems(
         request: GetItemsDTO
     ) async throws -> ResponseDTO {

@@ -25,7 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc = ListViewController(
             reactor: ListViewReactor(
                 useCase: ListUseCaseImpl(
-                    repository: StubListRepository()
+                    repository: ListRepositoryImpl(
+                        api: APIManagerImpl()
+                    )
                 )
             )
         )
