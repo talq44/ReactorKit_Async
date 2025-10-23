@@ -13,4 +13,19 @@ enum APIError: Error, Sendable {
     case networkNotConnect
     case timeOut
     case unknown
+    
+    var errorMessage: String {
+        switch self {
+        case .statusCode(let int):
+            return "\(int)가 발생했습니다."
+        case .serializationFailed:
+            return localizedDescription
+        case .networkNotConnect:
+            return localizedDescription
+        case .timeOut:
+            return localizedDescription
+        case .unknown:
+            return "알수없는 에러가 발생했습니다."
+        }
+    }
 }

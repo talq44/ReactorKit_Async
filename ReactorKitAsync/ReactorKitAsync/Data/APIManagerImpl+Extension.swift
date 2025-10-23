@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension APIManagerImpl {
+extension APIManagerImpl: APIManager {
     func getItems(
         request: GetItemsDTO
     ) async throws -> ResponseDTO {
