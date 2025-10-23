@@ -25,19 +25,11 @@
 			remoteGlobalIDString = B636BDB22EA7C70E004BDFA3;
 			remoteInfo = ReactorKitAsync;
 		};
-		B636BDD42EA7C710004BDFA3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B636BDAB2EA7C70E004BDFA3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B636BDB22EA7C70E004BDFA3;
-			remoteInfo = ReactorKitAsync;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B636BDB32EA7C70E004BDFA3 /* ReactorKitAsync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactorKitAsync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B636BDC92EA7C710004BDFA3 /* ReactorKitAsyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactorKitAsyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B636BDD32EA7C710004BDFA3 /* ReactorKitAsyncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactorKitAsyncUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -62,11 +54,6 @@
 		B636BDCC2EA7C710004BDFA3 /* ReactorKitAsyncTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ReactorKitAsyncTests;
-			sourceTree = "<group>";
-		};
-		B636BDD62EA7C710004BDFA3 /* ReactorKitAsyncUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ReactorKitAsyncUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -94,13 +81,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B636BDD02EA7C710004BDFA3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -109,7 +89,6 @@
 			children = (
 				B636BDB52EA7C70E004BDFA3 /* ReactorKitAsync */,
 				B636BDCC2EA7C710004BDFA3 /* ReactorKitAsyncTests */,
-				B636BDD62EA7C710004BDFA3 /* ReactorKitAsyncUITests */,
 				B636BDB42EA7C70E004BDFA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,7 +98,6 @@
 			children = (
 				B636BDB32EA7C70E004BDFA3 /* ReactorKitAsync.app */,
 				B636BDC92EA7C710004BDFA3 /* ReactorKitAsyncTests.xctest */,
-				B636BDD32EA7C710004BDFA3 /* ReactorKitAsyncUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,29 +158,6 @@
 			productReference = B636BDC92EA7C710004BDFA3 /* ReactorKitAsyncTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B636BDD22EA7C710004BDFA3 /* ReactorKitAsyncUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B636BDE42EA7C710004BDFA3 /* Build configuration list for PBXNativeTarget "ReactorKitAsyncUITests" */;
-			buildPhases = (
-				B636BDCF2EA7C710004BDFA3 /* Sources */,
-				B636BDD02EA7C710004BDFA3 /* Frameworks */,
-				B636BDD12EA7C710004BDFA3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B636BDD52EA7C710004BDFA3 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				B636BDD62EA7C710004BDFA3 /* ReactorKitAsyncUITests */,
-			);
-			name = ReactorKitAsyncUITests;
-			packageProductDependencies = (
-			);
-			productName = ReactorKitAsyncUITests;
-			productReference = B636BDD32EA7C710004BDFA3 /* ReactorKitAsyncUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,10 +172,6 @@
 						CreatedOnToolsVersion = 26.0.1;
 					};
 					B636BDC82EA7C710004BDFA3 = {
-						CreatedOnToolsVersion = 26.0.1;
-						TestTargetID = B636BDB22EA7C70E004BDFA3;
-					};
-					B636BDD22EA7C710004BDFA3 = {
 						CreatedOnToolsVersion = 26.0.1;
 						TestTargetID = B636BDB22EA7C70E004BDFA3;
 					};
@@ -250,7 +201,6 @@
 			targets = (
 				B636BDB22EA7C70E004BDFA3 /* ReactorKitAsync */,
 				B636BDC82EA7C710004BDFA3 /* ReactorKitAsyncTests */,
-				B636BDD22EA7C710004BDFA3 /* ReactorKitAsyncUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -264,13 +214,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B636BDC72EA7C710004BDFA3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B636BDD12EA7C710004BDFA3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,13 +237,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B636BDCF2EA7C710004BDFA3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -308,11 +244,6 @@
 			isa = PBXTargetDependency;
 			target = B636BDB22EA7C70E004BDFA3 /* ReactorKitAsync */;
 			targetProxy = B636BDCA2EA7C710004BDFA3 /* PBXContainerItemProxy */;
-		};
-		B636BDD52EA7C710004BDFA3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B636BDB22EA7C70E004BDFA3 /* ReactorKitAsync */;
-			targetProxy = B636BDD42EA7C710004BDFA3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -452,6 +383,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -508,6 +440,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -556,46 +489,6 @@
 			};
 			name = Release;
 		};
-		B636BDE52EA7C710004BDFA3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ER3SS2UJ44;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.talq.ReactorKitAsyncUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ReactorKitAsync;
-			};
-			name = Debug;
-		};
-		B636BDE62EA7C710004BDFA3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ER3SS2UJ44;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.talq.ReactorKitAsyncUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ReactorKitAsync;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -622,15 +515,6 @@
 			buildConfigurations = (
 				B636BDE22EA7C710004BDFA3 /* Debug */,
 				B636BDE32EA7C710004BDFA3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B636BDE42EA7C710004BDFA3 /* Build configuration list for PBXNativeTarget "ReactorKitAsyncUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B636BDE52EA7C710004BDFA3 /* Debug */,
-				B636BDE62EA7C710004BDFA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

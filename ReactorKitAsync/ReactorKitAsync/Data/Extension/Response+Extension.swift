@@ -1,0 +1,20 @@
+import Foundation
+import Moya
+
+extension Response {
+    private var statusCodeType: HTTPStatusCode? {
+        return HTTPStatusCode(rawValue: self.statusCode)
+    }
+    
+    internal func convertError(error: Error) -> APIError {
+        guard let statusCode = statusCodeType else {
+            return error.apiError(statusCodeType: nil, message: nil)
+        }
+        
+        guard statusCode.responseType != .success else {
+            return error.apiError(statusCodeType: statusCode, message: nil)
+        }
+        
+        return APIError.statusCode(statusCode.rawValue)
+    }
+}
