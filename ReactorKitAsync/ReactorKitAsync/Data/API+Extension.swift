@@ -31,13 +31,6 @@ extension API: Moya.TargetType {
         }
     }
     
-    var header: [String: String]? {
-        switch self {
-        case .getItems:
-            return [:]
-        }
-    }
-    
     var path: String {
         switch self {
         case .getItems:
