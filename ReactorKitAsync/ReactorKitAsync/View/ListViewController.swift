@@ -5,19 +5,42 @@ import RxSwift
 import RxCocoa
 
 final class ListViewController: UIViewController {
-    typealias Cell = UICollectionViewCell
+    typealias Cell = ListItemCell
     
     var disposeBag = DisposeBag()
     
+    private static func createCompositionalLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .estimated(180) // 다이나믹 높이를 위한 estimated 사용
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(180) // 그룹도 estimated 높이 사용
+        )
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+        
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+    
     private let collectionView = UICollectionView(
         frame: .zero,
-        collectionViewLayout: UICollectionViewLayout()
+        collectionViewLayout: ListViewController.createCompositionalLayout()
     )
+    
     private let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         return refreshControl
     }()
+    
     private let indicatorView = UIActivityIndicatorView(style: .large)
+    
     private let emptyImage = UIImageView(
         image: UIImage(systemName: "exclamationmark.magnifyingglass")
     )
@@ -54,6 +77,11 @@ final class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.register(
+            Cell.self,
+            forCellWithReuseIdentifier: String(describing: Cell.self)
+        )
     }
 }
 
@@ -100,8 +128,8 @@ extension ListViewController: ReactorKit.View {
             .bind(to: collectionView.rx.items(
                 cellIdentifier: String(describing: Cell.self),
                 cellType: Cell.self
-            )) { _, _, _ in
-                
+            )) { index, item, cell in
+                cell.bind(state: item)
             }.disposed(by: disposeBag)
         
         reactor.state.map { $0.isShowLoading }
