@@ -8,11 +8,11 @@ extension Response {
     
     internal func convertError(error: Error) -> APIError {
         guard let statusCode = statusCodeType else {
-            return error.apiError(statusCodeType: nil, message: nil)
+            return error.apiError(statusCodeType: nil)
         }
         
         guard statusCode.responseType != .success else {
-            return error.apiError(statusCodeType: statusCode, message: nil)
+            return error.apiError(statusCodeType: statusCode)
         }
         
         return APIError.statusCode(statusCode.rawValue)
