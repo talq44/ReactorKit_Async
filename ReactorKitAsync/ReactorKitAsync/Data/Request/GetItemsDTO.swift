@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct GetItemsDTO: Encodable, Sendable {
+public struct GetItemsDTO: Encodable, Sendable {
     let page: Int
     let perPage: Int
     let gender: String = "male"
+    
+    public init(page: Int, perPage: Int) {
+        self.page = page
+        self.perPage = perPage
+    }
 }
