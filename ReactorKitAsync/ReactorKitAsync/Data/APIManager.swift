@@ -44,6 +44,25 @@ class APIManager {
                     }
                     
                 case .failure(let error):
+                    if case let .underlying(underlying, response) = error,
+                       let urlError = underlying as? URLError {
+                        switch urlError.code {
+                        case .notConnectedToInternet, .networkConnectionLost:
+                            continuation.resume(throwing: APIError.networkNotConnect)
+                            return
+                        case .timedOut:
+                            continuation.resume(throwing: APIError.timeOut)
+                            return
+                        default:
+                            break
+                        }
+                        
+                        if let response {
+                            continuation.resume(throwing: response.convertError(error: error))
+                            return
+                        }
+                    }
+                    
                     guard let converted = error.response?.convertError(error: error) else {
                         continuation.resume(throwing: APIError.unknown)
                         return

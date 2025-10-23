@@ -8,7 +8,7 @@ struct APIManagerTests {
         
         do {
             let response = try await sut.getItems(request: GetItemsDTO(page: 1, perPage: 20))
-            assert(response.results.count > 0)
+            #expect(response.results.count > 0)
             
         } catch {
             throw error

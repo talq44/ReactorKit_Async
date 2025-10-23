@@ -1,8 +1,8 @@
 import Foundation
 
-enum HTTPStatusCode: Int, Error, Sendable {
+enum HTTPStatusCode: Int {
     /// The response class representation of status codes, these get grouped by their first digit.
-    enum ResponseType: Sendable {
+    enum ResponseType {
         
         /// - informational: This class of status code indicates a provisional response, consisting only of the Status-Line and optional headers, and is terminated by an empty line.
         case informational
@@ -98,7 +98,7 @@ enum HTTPStatusCode: Int, Error, Sendable {
     /// - temporaryRedirect: The request should be repeated with another URI.
     case code_307 = 307
     
-    /// - permenantRedirect: The request and all future requests should be repeated using another URI.
+    /// - permanentRedirect: The request and all future requests should be repeated using another URI.
     case code_308 = 308
     
     //

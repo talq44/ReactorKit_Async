@@ -9,7 +9,7 @@ extension Error {
                 .map { $0.stringValue }
                 .joined(separator: ",")
             
-            print("DataCorrupted", contexts)
+            printError("DataCorrupted", contexts)
             return APIError.serializationFailed
             
         } catch let DecodingError.keyNotFound(key, context) {
@@ -18,7 +18,7 @@ extension Error {
                 .map { $0.stringValue }
                 .joined(separator: ",")
             
-            print(key, contexts)
+            printError(key, contexts)
             return APIError.serializationFailed
             
         } catch let DecodingError.valueNotFound(type, context) {
@@ -27,7 +27,7 @@ extension Error {
                 .map { $0.stringValue }
                 .joined(separator: ",")
             
-            print(type, contexts)
+            printError(type, contexts)
             return APIError.serializationFailed
             
         } catch let DecodingError.typeMismatch(type, context)  {
@@ -35,8 +35,19 @@ extension Error {
             let contexts = context.codingPath
                 .map { $0.stringValue }
                 .joined(separator: ",")
-            print(type, contexts)
+            printError(type, contexts)
             return APIError.serializationFailed
+            
+        } catch let urlError as URLError {
+            switch urlError.code {
+            case .notConnectedToInternet, .networkConnectionLost:
+                return APIError.networkNotConnect
+            case .timedOut:
+                return APIError.timeOut
+            default:
+                return APIError.unknown
+            }
+            
         } catch {
             guard let statusCodeType else {
                 return APIError.unknown
@@ -44,5 +55,11 @@ extension Error {
             
             return APIError.statusCode(statusCodeType.rawValue)
         }
+    }
+    
+    private func printError(_ items: Any...) {
+#if DEBUG
+        print(items)
+#endif
     }
 }
