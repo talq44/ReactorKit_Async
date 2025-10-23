@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 import Moya
 
-class APIManager {
+class APIManagerImpl {
     private let provider: MoyaProvider<API>
     
     init() {

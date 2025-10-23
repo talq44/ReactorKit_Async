@@ -4,7 +4,7 @@ import Testing
 
 struct APIManagerTests {
     @MainActor @Test("최초 요청 테스트") func apiRequestTest() async throws {
-        let sut = APIManager()
+        let sut = APIManagerImpl()
         
         do {
             let response = try await sut.getItems(request: GetItemsDTO(page: 1, perPage: 20))
